@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cf.schoolhub.schoolhub" >
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,11 @@
         <activity
             android:name=".SignUp"
             android:label="Sign Up">
+        </activity>
+
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home">
         </activity>
     </application>
 

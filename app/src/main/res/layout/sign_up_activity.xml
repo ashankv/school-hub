@@ -1,8 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/app_bar"/>
-    
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:layout_marginTop="58dp"
+
+        android:layout_gravity="center_vertical"
+        android:id="@+id/myContainerLayout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstNameText"
+            android:text="First Name:"
+            android:layout_below="@+id/app_bar"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstNameEditText"
+            android:layout_below="@+id/firstNameText"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lastNameText"
+            android:text="Last Name:"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lastNameEditText"
+            android:layout_below="@+id/lastNameText"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/userNameIdText"
+            android:layout_below="@+id/lastNameEditText"
+            android:text="School ID (Your Username):"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/userNameIdEditText"
+            android:layout_below="@+id/userNameIdText"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordText"
+            android:layout_below="@+id/userNameIdEditText"
+            android:text="Password:"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordEditText"
+            android:layout_below="@+id/passwordText"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailText"
+            android:layout_below="@+id/passwordEditText"
+            android:text="Your Email Address"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailEditText"
+            android:layout_below="@+id/emailText"
+            android:ems="10"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSignUpAccount"
+
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:shadowRadius="50"
+
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="515dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/enter_button"
+        android:text="Sign Up"
+        android:textColor="#FFFFFF"
+        />
+</RelativeLayout>

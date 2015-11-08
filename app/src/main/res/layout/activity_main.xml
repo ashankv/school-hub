@@ -90,15 +90,17 @@
             android:layout_height="40dp"
             android:shadowRadius="50"
 
-            android:layout_below="@+id/passwordView"
-            android:layout_toRightOf="@id/btnEnter"
+
+
 
 
             android:text="SIGN UP"
             android:textSize="12sp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="153dp"
             android:textColor="@color/colorAccent"
-            style="?android:attr/borderlessButtonStyle"/>
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_below="@+id/btnEnter" />
 
 
 
