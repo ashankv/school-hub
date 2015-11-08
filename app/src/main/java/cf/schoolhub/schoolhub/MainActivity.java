@@ -1,6 +1,7 @@
 package cf.schoolhub.schoolhub;
 
 import android.content.Intent;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,11 +9,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     Button btnSignUp;
+    EditText userNameView;
+    EditText passwordView;
+    Button btnEnter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +26,34 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
 
-
+        userNameView = (EditText) findViewById(R.id.userNameView);
+        passwordView = (EditText) findViewById(R.id.passwordView);
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        btnEnter = (Button) findViewById(R.id.btnEnter);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(MainActivity.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
+
+        btnEnter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tempUserName = userNameView.getText().toString();
+                String tempPassword = passwordView.getText().toString();
+
+
+                try{
+                    Helper.sendLoginPost(tempUserName, tempPassword);
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });

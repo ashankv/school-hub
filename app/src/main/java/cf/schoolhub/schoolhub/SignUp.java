@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by Ashank on 11/7/2015.
@@ -50,14 +51,25 @@ public class SignUp extends AppCompatActivity {
                 String passwordText = passwordEditText.getText().toString();
                 String emailText = emailEditText.getText().toString();
 
-                try{
-                    Helper.sendRegPost(firstNameText, lastNameText, emailText, userNameText, passwordText);
-                } catch(Exception e){
-                    e.printStackTrace();
+                try {
+                    try {
+                        Helper.sendRegPost(firstNameText, lastNameText, emailText, userNameText, passwordText);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(getApplicationContext(), (String) e.getMessage(), Toast.LENGTH_LONG).show();
+                        throw new SignUpFailException();
+                    }
+
+                    Intent signUpIntent = new Intent(SignUp.this, HomeActivity.class);
+                    startActivity(signUpIntent);
+
+
+                } catch(SignUpFailException failException){
+                    failException.printStackTrace();
                 }
 
-                Intent signUpIntent = new Intent(SignUp.this, HomeActivity.class);
-                startActivity(signUpIntent);
+
             }
         });
     }
